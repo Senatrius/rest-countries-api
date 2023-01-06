@@ -38,17 +38,23 @@ export default function Index() {
     (async () => {
       const data = await fetch("https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags");
       const response = await data.json();
-      console.log(response)
       setCountryData(response)
     })()
   }, [])
+
+  const sortedData = countryData.sort((a, b) => {
+    return a.name.common.toLowerCase().localeCompare(b.name.common.toLowerCase())
+  });
+
+  const dataByRegion = filter !== "" ? sortedData.filter(data => data.region === filter) : sortedData;
+  const dataBySearch = query !== "" ? dataByRegion.filter(data => data.name.common.toLowerCase().includes(query.toLowerCase())) : dataByRegion;
 
   return <>
     <Controls>
       <Search value={query} setQuery={setQuery}/>
       <Filter filter={filter} setFilter={setFilter}/>
     </Controls>
-    <Countries countrySet={countrySet} countryData={countryData}/>
+    <Countries countrySet={countrySet} countryData={dataBySearch} />
     <div className="flex gap-4 maxWidthWrapper mb-12">
       {
         (countrySet * 8 < countryData.length) && <ShowButton onClick={() => setCountrySet(countrySet + 1)} value="Show More"/>

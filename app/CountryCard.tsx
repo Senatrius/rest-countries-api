@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const CountryCard = ({flag, country, population, region, capital}: {flag: string, country: string, population: string, region: string, capital: string}) => {
-  return <Link href={country.toLowerCase().replaceAll(" ", "-")} className="block rounded bg-white shadow-component hover:shadow-lg dark:bg-darkElement">
+  return <Link href={country.toLowerCase().replaceAll(" ", "-")} className="relative block rounded bg-white shadow-component hover:shadow-lg dark:bg-darkElement">
     <div className="relative w-full pb-[60%] rounded-tl rounded-tr overflow-hidden">
       <Image src={flag} alt={`${country} flag`} fill/>
     </div>

@@ -30,7 +30,7 @@ export interface ICountry {
 
 export default function Index() {
   const [query, setQuery] = useState<string>("");
-  const [filter, setFilter] = useState<string>("");
+  const [filter, setFilter] = useState<string>("All");
   const [countryData, setCountryData] = useState<ICountry[]>([])
   const [countrySet, setCountrySet] = useState<number>(1)
 
@@ -46,7 +46,7 @@ export default function Index() {
     return a.name.common.toLowerCase().localeCompare(b.name.common.toLowerCase())
   });
 
-  const dataByRegion = filter !== "" ? sortedData.filter(data => data.region === filter) : sortedData;
+  const dataByRegion = filter !== "All" ? sortedData.filter(data => data.region === filter) : sortedData;
   const dataBySearch = query !== "" ? dataByRegion.filter(data => data.name.common.toLowerCase().includes(query.toLowerCase())) : dataByRegion;
 
   return <>

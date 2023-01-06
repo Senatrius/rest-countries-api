@@ -15,7 +15,7 @@ export const Filter = ({filter, setFilter}: {filter: string, setFilter: React.Di
       {filter === "" ? "Filter by Region" : filter}
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} className={`w-5 h-5 ml-12 stroke-lightText dark:stroke-white ${isFilterOpen && "rotate-180"} transition-transform`}><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
     </button>
-    {isFilterOpen && <div className="right-0 left-0 absolute py-3 mt-1 rounded shadow-component bg-white dark:bg-darkElement">
+    {isFilterOpen && <div className="z-10 right-0 left-0 absolute py-3 mt-1 rounded shadow-component bg-white dark:bg-darkElement">
       <ul>
         <li onClick={handleFilterSelect} className="py-1.5 px-7 w-full cursor-pointer hover:backdrop-brightness-90 dark:hover:backdrop-brightness-125">Africa</li>
         <li onClick={handleFilterSelect} className="py-1.5 px-7 w-full cursor-pointer hover:backdrop-brightness-90 dark:hover:backdrop-brightness-125">America</li>

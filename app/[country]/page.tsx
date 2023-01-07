@@ -100,7 +100,7 @@ export default function CountryInfo() {
           <p className="block md:inline text-[1.25rem] font-bold whitespace-nowrap mr-4 mb-7">Border Countries:</p>
           <div className="flex items-center gap-2 flex-wrap">
               {
-              borderCountries.map((country, idx) => <BorderButton key={idx} href={country!.name.common.replace(" ", "-")} value={country!.name.common}/>)
+              borderCountries.map((country, idx) => <BorderButton key={idx} href={country!.name.common.replaceAll(" ", "-")} value={country!.name.common}/>)
               }
           </div>
         </div>}

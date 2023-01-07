@@ -68,7 +68,7 @@ export default function CountryInfo() {
     })()
   }, [path])
 
-  {if (countryData == null) return <p>Loading</p>}
+  {if (countryData == null) return <p className="maxWidthWrapper my-6">Loading...</p>}
 
   const nativeNameKey: string | null = Object.keys(countryData[0].name.nativeName)[0];
   const currencyKey: string | null = Object.keys(countryData[0].currencies)[0];

@@ -16,9 +16,9 @@ export interface ICountry {
     common: string,
     official: string,
     nativeName: {
-      eng: {
-        official: string,
-        common: string
+      eng?: {
+        official?: string,
+        common?: string
       }
     }
   },

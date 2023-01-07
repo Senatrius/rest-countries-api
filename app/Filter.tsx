@@ -19,7 +19,7 @@ export const Filter = ({filter, setFilter}: {filter: string, setFilter: React.Di
       <ul>
         <li onClick={handleFilterSelect} className="py-1.5 px-7 w-full cursor-pointer hover:backdrop-brightness-95 dark:hover:backdrop-brightness-125">All</li>
         <li onClick={handleFilterSelect} className="py-1.5 px-7 w-full cursor-pointer hover:backdrop-brightness-95 dark:hover:backdrop-brightness-125">Africa</li>
-        <li onClick={handleFilterSelect} className="py-1.5 px-7 w-full cursor-pointer hover:backdrop-brightness-95 dark:hover:backdrop-brightness-125">America</li>
+        <li onClick={handleFilterSelect} className="py-1.5 px-7 w-full cursor-pointer hover:backdrop-brightness-95 dark:hover:backdrop-brightness-125">Americas</li>
         <li onClick={handleFilterSelect} className="py-1.5 px-7 w-full cursor-pointer hover:backdrop-brightness-95 dark:hover:backdrop-brightness-125">Asia</li>
         <li onClick={handleFilterSelect} className="py-1.5 px-7 w-full cursor-pointer hover:backdrop-brightness-95 dark:hover:backdrop-brightness-125">Europe</li>
         <li onClick={handleFilterSelect} className="py-1.5 px-7 w-full cursor-pointer hover:backdrop-brightness-95 dark:hover:backdrop-brightness-125">Oceania</li>

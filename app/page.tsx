@@ -57,7 +57,7 @@ export default function Index() {
     <Countries countrySet={countrySet} countryData={dataBySearch} />
     <div className="flex gap-4 maxWidthWrapper mb-12">
       {
-        (countrySet * 8 < countryData.length) && <ShowButton onClick={() => setCountrySet(countrySet + 1)} value="Show More"/>
+        (countrySet * 8 < dataBySearch.length) && <ShowButton onClick={() => setCountrySet(countrySet + 1)} value="Show More"/>
       }
       {
         (countrySet > 1) && <ShowButton onClick={() => setCountrySet(countrySet - 1)} value="Show Less"/>

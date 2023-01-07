@@ -76,13 +76,13 @@ export default function CountryInfo() {
 
   return <main className="maxWidthWrapper flex flex-col">
     <BackButton />
-    <div className="w-full flex flex-col lg:flex-row lg:items-center">
+    <div className="w-full flex flex-col lg:flex-row items-start">
       <div className="relative w-full lg:max-w-[35rem] h-auto aspect-[5/3] grow">
         <Image src={countryData[0].flags.svg} alt="" fill priority/>
       </div>
-      <section className="my-14 lg:ml-28 grow">
+      <section className="my-14 lg:ml-28 lg:mt-0 grow">
         <p className="block w-full text-2xl md:text-4xl font-extrabold mb-8">{countryData[0].name.common}</p>
-        <div className="flex flex-col md:flex-row lg:justify-between md:gap-16 lg:gap-8">
+        <div className="flex flex-col md:flex-row lg:justify-between md:gap-28 lg:gap-8">
           <div className="mb-14 md:mb-0">
             <p className="mb-3"><span className="font-bold">Native Name:</span> {countryData[0].name.nativeName[nativeNameKey]?.common || "-"}</p>
             <p className="mb-3"><span className="font-bold">Population:</span> {countryData[0].population.toLocaleString() || "-"}</p>
@@ -96,8 +96,8 @@ export default function CountryInfo() {
             <p><span className="font-bold">Languages:</span> {languages.join(', ') || "-"}</p>
           </div>
         </div>
-        {borderCountries !== null && <div className="flex flex-col mt-12 md:flex-row md:mt-[4.5rem] md:items-center flex-wrap">
-          <p className="block md:inline text-[1.25rem] font-bold whitespace-nowrap mr-4 mb-7">Border Countries:</p>
+        {borderCountries !== null && <div className="flex flex-col mt-5 md:flex-row md:mt-[4.5rem] md:items-center flex-wrap">
+          <p className="block md:inline text-[1.25rem] font-bold whitespace-nowrap mr-4 my-7">Border Countries:</p>
           <div className="flex items-center gap-2 flex-wrap">
               {
               borderCountries.map((country, idx) => <BorderButton key={idx} href={country!.name.common.replaceAll(" ", "-")} value={country!.name.common}/>)
